@@ -1,3 +1,4 @@
+// Deposit component logic Start
 // step 01: addEventListener to the deposit button
 document.querySelector("#btn-deposit").addEventListener("click", function () {
   //   step 02: get the deposit amount from the deposit input field
@@ -12,5 +13,19 @@ document.querySelector("#btn-deposit").addEventListener("click", function () {
   const depositTotal = parseFloat(depositTotalElement.innerText);
 
   depositTotalElement.innerText = depositTotal + depositAmount;
-  console.log(depositTotal);
+
+  // step 04: get current balance total
+
+   const balanceTotalElement = document.querySelector("#balance-total");
+   const balanceTotal = parseFloat(balanceTotalElement.innerText);
+
+   // step 05: calculate current balance total. and update the balance total
+   const currentBalanceTotal = balanceTotal + depositAmount;
+
+   balanceTotalElement.innerText = currentBalanceTotal;
+
+  // step 05: clear the deposit input field
+  depositField.value = "";
 });
+
+// Deposit component logic End
